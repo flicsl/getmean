@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/flicsl/getmean/issues"
   },
-  "homepage": "https://github.com/flicsl/getmean#readme"
+  "homepage": "https://github.com/flicsl/getmean#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }

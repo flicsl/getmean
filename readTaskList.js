@@ -1,24 +1,27 @@
 var fs = require('fs');
 var path = require('path');
-var http = require('http');
+var express = require('express');
 
 var filePath = path.join(__dirname, 'tarefas.json');
 
-var server = http.createServer(function (request, response) {
-	getTarefas(function (err, tarefas) {
-		if (!err) {
-			response.writeHead(200, { "Content": "application/json" });
-			response.write(JSON.stringify(tarefas));
-		}
-		else {
-			response.writeHead(500);
-		}
-		response.end();
-	});
+var app = express();
+
+app.get('/', function (req, res) {
+	res.send('Hello World!');
 });
 
-server.listen(3000, function () {
-	console.log("Servidor ouvindo na porta 3000.");
+app.get('/tasks', function (req, res) {
+	getTarefas(function (err, data) {
+		if (!err) {
+			res.send(data);
+		} else {
+			res.send(err);
+		}
+	})
+})
+
+app.listen(3000, function () {
+	console.log("Servidor express ouvindo na porta 3000.");
 });
 
 function getTarefas (callback) {
