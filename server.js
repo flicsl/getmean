@@ -8,6 +8,10 @@ app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
+app.get('/assets/index.css', function (req, res) {
+	res.sendFile(path.join(__dirname, 'public/assets/index.css'));
+});
+
 app.get('/tasks', function (req, res) {
 	getTarefas(function (err, data) {
 		if (!err) {
