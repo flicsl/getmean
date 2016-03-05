@@ -1,0 +1,23 @@
+{
+  "name": "getmean",
+  "version": "1.0.0",
+  "description": "Tutorial para ensino da MEAN stack.",
+  "main": "readTaskList.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flicsl/getmean.git"
+  },
+  "keywords": [
+    "tutorial",
+    "MEAN"
+  ],
+  "author": "Feliciano Santana <fsfelicianosantana@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flicsl/getmean/issues"
+  },
+  "homepage": "https://github.com/flicsl/getmean#readme"
+}
