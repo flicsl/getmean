@@ -2,12 +2,10 @@ var fs = require('fs');
 var path = require('path');
 var express = require('express');
 
-var filePath = path.join(__dirname, 'tarefas.json');
-
 var app = express();
 
 app.get('/', function (req, res) {
-	res.send('Hello World!');
+	res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 app.get('/tasks', function (req, res) {
@@ -24,6 +22,7 @@ app.listen(3000, function () {
 	console.log("Servidor express ouvindo na porta 3000.");
 });
 
+var filePath = path.join(__dirname, 'tarefas.json');
 function getTarefas (callback) {
 	fs.readFile(filePath, {encoding: 'utf-8'}, function(err, data){
 	    if (!err) {
