@@ -4,13 +4,7 @@ var express = require('express');
 
 var app = express();
 
-app.get('/', function (req, res) {
-	res.sendFile(path.join(__dirname, 'public/index.html'));
-});
-
-app.get('/assets/index.css', function (req, res) {
-	res.sendFile(path.join(__dirname, 'public/assets/index.css'));
-});
+app.use(express.static('public'));
 
 app.get('/tasks', function (req, res) {
 	getTarefas(function (err, data) {
