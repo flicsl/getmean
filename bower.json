@@ -1,0 +1,25 @@
+{
+  "name": "getmean",
+  "description": "Tutorial para ensino da MEAN stack.",
+  "main": "readTaskList.js",
+  "authors": [
+    "Feliciano Santana <fsfelicianosantana@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "tutorial",
+    "MEAN"
+  ],
+  "homepage": "https://github.com/flicsl/getmean",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0"
+  }
+}
