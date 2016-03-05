@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var express = require('express');
+var bodyParser = require('body-parser');
 
 // Conecta-se ao banco
 mongoose.connect('mongodb://localhost/getmean');
@@ -20,8 +21,11 @@ var PessoaEndpoint = require('./api/endpoints/PessoaEndpoint.js')
 // Configura o servidor
 var app = express();
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.get('/tarefas', TarefaEndpoint.getTarefas);
+app.post('/tarefas', TarefaEndpoint.postTarefas);
 app.get('/pessoas', PessoaEndpoint.getPessoas);
 
 // Inicia o servidor ao conectar-se ao banco

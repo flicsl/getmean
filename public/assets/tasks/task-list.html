@@ -1,0 +1,11 @@
+<div class="card">
+	<img ng-if="vm.loading" class="loader" src="assets/imgs/reload.gif">
+	<ul ng-show="!vm.loading">
+		<li class="task" ng-repeat="task in vm.tasks" ng-class="{'checked': task.checked}">
+			<input type='checkbox' ng-model="task.checked"> {{task.conteudo}}
+		</li>
+	</ul>
+	<form name="taskForm" ng-submit="taskForm.$valid && vm.createTask(taskForm.task)" ng-if="!vm.loading">
+		<input autofocus type='text' ng-model="taskForm.task.conteudo" placeholder="Digite aqui para criar uma nova tarefa" required>
+	</form>
+</div>

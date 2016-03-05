@@ -1,5 +1,48 @@
-body {
+body, html {
 	font-family: Arial, Helvetica, sans-serif;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: #fcfcfc;
+}
+
+section.header {
+	padding: 18px;
+	background: #e67e22;
+	color: white;
+	display: flex;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+section.header h1 {
+	margin: 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.flex {
+	flex: 1;
+}
+
+.header nav {
+	display: flex;
+	vertical-align: middle;
+	align-items: center;
+}
+
+.header nav a {
+	color: white;
+	margin: 0 6px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.main-width {
+	max-width: 1000px;
+	padding: 30px;
+	margin: 0 auto;
 }
 
 h1 {
@@ -9,7 +52,40 @@ h1 {
     transition: all 0.5s;
 }
 
-h1:hover {
-	color: #dd0000;
-	font-size: 42px;
+.card {
+    background-color: rgb(255,255,255);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+    padding: 16px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 4px;
+	margin-bottom: 16px;
+}
+
+li.task {
+	padding: 4px;
+}
+
+li.task:first-of-type {
+	
+}
+
+.task.checked {
+	text-decoration: line-through;
+    color: #ccc;
+}
+
+.loader {
+	display: block;
+	margin: 0 auto;
+}
+
+input[type="text"] {
+	padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
 }
