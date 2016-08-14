@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var express = require('express');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 
 // Conecta-se ao banco
 mongoose.connect('mongodb://localhost/getmean');
@@ -23,6 +24,7 @@ var app = express();
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get('/tarefas', TarefaEndpoint.getTarefas);
 app.post('/tarefas', TarefaEndpoint.postTarefas);
